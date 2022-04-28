@@ -26,7 +26,7 @@ public class SpawnPrefabOnClick : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
-            if (Physics.Raycast(ray, out hit, Atom.value))
+            if (Physics.Raycast(ray, out hit, 1000, Atom.value))
             {
                 
                 Point = hit.point;
