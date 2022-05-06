@@ -29,6 +29,6 @@ public class Spin : MonoBehaviour
         float MX = moveX * Time.deltaTime;
         float MY = moveY * Time.deltaTime;
         float MZ = moveZ * Time.deltaTime;
-        transform.Translate(MX, MY, MZ);
+        transform.Translate(MX, MZ, MY);
     }
 }

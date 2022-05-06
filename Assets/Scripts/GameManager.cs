@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public enum GamePhases {Start, Middle, End};
     public GamePhases currentGamePhase;
     float experienceTime;
+
+    public GameObject wormHole;
+    public bool spawnedWormHole = false;
     
     // Update is called once per frame
     void Update()
@@ -17,19 +20,24 @@ public class GameManager : MonoBehaviour
         if(experienceTime > 0 && experienceTime < 60)
         {
             currentGamePhase = GamePhases.Start;
-            Debug.Log(currentGamePhase);
+            if(experienceTime >= 5f && experienceTime <= 6f && spawnedWormHole == false)
+            {
+                Instantiate(wormHole);
+                spawnedWormHole = true;
+                Debug.Log("Spawn Wormhole");
+            }
         }
 
         if (experienceTime > 60 && experienceTime < 180)
         {
             currentGamePhase = GamePhases.Middle;
-            Debug.Log("Middle Phase");
+            
         }
 
         if (experienceTime > 180 && experienceTime < 240)
         {
             currentGamePhase = GamePhases.End;
-            Debug.Log("End Phase");
+            
         }
 
         switch (currentGamePhase)
