@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 357729048}
   - component: {fileID: 357729047}
   - component: {fileID: 357729046}
+  - component: {fileID: 357729050}
   m_Layer: 0
   m_Name: Sphere (6)
   m_TagString: Untagged
@@ -486,6 +487,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357729044}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &357729050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357729044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f6654395346b1469931a3e00ba81fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bias: 10
+  timeStep: 0.1
+  timeToBeat: 0.05
+  restSmoothTime: 5
+  beatScale: {x: 15, y: 15, z: 15}
+  restScale: {x: 8, y: 8, z: 8}
 --- !u!1 &439527873
 GameObject:
   m_ObjectHideFlags: 0
@@ -6926,7 +6945,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 63e3b25e42c1f094e8ec3b0f1f711acc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f1065455080e60748a7e7067d383a152, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
