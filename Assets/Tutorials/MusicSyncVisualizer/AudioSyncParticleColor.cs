@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
 
-
-[RequireComponent(typeof(Renderer))]
-public class AudioSyncMaterial : AudioSyncer
-{ 
-	private IEnumerator MoveToColor(Color _target)
+[RequireComponent(typeof(ParticleSystemRenderer))]
+public class AudioSyncParticleColor : AudioSyncer
+{
+    [System.Obsolete]
+    private IEnumerator MoveToColor(Color _target)
 	{
-		Color _curr = rend.material.color;
+		Color _curr = pSys.startColor;
 		Color _initial = _curr;
 		float _timer = 0;
 
@@ -19,7 +17,7 @@ public class AudioSyncMaterial : AudioSyncer
 			_curr = Color.Lerp(_initial, _target, _timer / timeToBeat);
 			_timer += Time.deltaTime;
 
-			rend.material.color = _curr;
+			pSys.startColor = _curr;
 
 			yield return null;
 		}
@@ -31,36 +29,39 @@ public class AudioSyncMaterial : AudioSyncer
 	{
 		if (beatColors == null || beatColors.Length == 0) return Color.white;
 		m_randomIndx = Random.Range(0, beatColors.Length);
-		return beatColors [m_randomIndx];
+		return beatColors[m_randomIndx];
 	}
-
+	[System.Obsolete]
 	public override void OnUpdate()
 	{
 		base.OnUpdate();
 
-		if (m_isBeat) return;		
+		if (m_isBeat) return;
 
-		rend.material.color = Color.Lerp(rend.material.color, restColor, restSmoothTime * Time.deltaTime);
+		pSys.startColor = Color.Lerp(pSys.startColor, restColor, restSmoothTime * Time.deltaTime);
 	}
 
 	public override void OnBeat()
 	{
 		base.OnBeat();
-
+		
 		Color _m = RandomMaterialColor();
-
 		StopCoroutine("MoveToColor");
 		StartCoroutine("MoveToColor", _m);
 	}
 
 	private void Start()
 	{
-		rend = GetComponent<Renderer>(); //Material Conversion
+		//rend = GetComponent<Renderer>(); //Material Conversion
+		pRend = GetComponent<ParticleSystemRenderer>();
+		pSys = GetComponent<ParticleSystem>();
 	}
 
 	public Color[] beatColors;
-	public Color restColor; 
+	public Color restColor;
 
 	private int m_randomIndx;
-	private Renderer rend;
+	//private Renderer rend;
+	private ParticleSystemRenderer pRend;
+	private ParticleSystem pSys;
 }
