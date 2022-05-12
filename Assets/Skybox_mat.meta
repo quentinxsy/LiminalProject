@@ -1,12 +1,6 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/PostProcessing.meta
-guid: 2c1147e7f966be34eb102eb638031f23
-========
-guid: c51ad6d18bbec4443b41807f00db2ee7
->>>>>>>> DevBranch1:Assets/Skybox_mat.meta
+guid: 2a7dace749c7dc349b5e1efbad010e35
 folderAsset: yes
-timeCreated: 1527356340
-licenseType: Free
 DefaultImporter:
   externalObjects: {}
   userData: 

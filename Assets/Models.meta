@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/MusicSynchPackage.meta
-guid: 010facfdb80060348921062c38ce37d1
-========
-guid: 3c87898180281004d93430f0dbaa1bcd
->>>>>>>> DevBranch1:Assets/Models.meta
+guid: 7f0a21d5a1fc2244391d1dae6b5badd0
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
