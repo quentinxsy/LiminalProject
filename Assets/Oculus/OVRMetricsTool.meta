@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/SpareParts.meta
-guid: 1af7e692dc825b248a97def1cc9bc06e
-=======
-guid: 2320b432e04d03d4bbca263ca0e10d13
->>>>>>> 95ae704662c2b24f977a37aa4fd9e721af3e74ef:Assets/Oculus/OVRMetricsTool.meta
+guid: 763087fb22285d14c89d1e48112a62ed
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
