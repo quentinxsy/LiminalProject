@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool spawnedWormHole = false;
 
     
-    public MyEvents[] EventManager;
+    public EventManager[] eventManager;
 
 
     private void Start()
@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+        foreach (EventManager @event in eventManager)
+        {
+
+        }
 
     }
 
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         
         elapsedTime += Time.deltaTime;
         Debug.Log(elapsedTime);
@@ -85,7 +90,7 @@ public class GameManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class MyEvents
+public class EventManager
 {
     [Tooltip("Time you would like the event to occur.")]
     public float eventTimeStart;
