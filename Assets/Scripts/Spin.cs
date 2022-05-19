@@ -21,6 +21,8 @@ public class Spin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       
         float RX = rotateX * Time.deltaTime;
         float RY = rotateY * Time.deltaTime;
         float RZ = rotateZ * Time.deltaTime;
@@ -30,5 +32,11 @@ public class Spin : MonoBehaviour
         float MY = moveY * Time.deltaTime;
         float MZ = moveZ * Time.deltaTime;
         transform.Translate(MX, MZ, MY);
+    }
+
+
+    public void activate()
+    {
+
     }
 }
