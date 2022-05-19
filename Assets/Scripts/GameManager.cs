@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject wormHole;
     public bool spawnedWormHole = false;
 
-    [SerializeField] UnityEvent[] TimeElapsedEvents;
+    
+    public MyEvents[] EventManager;
 
 
     private void Start()
@@ -81,12 +82,17 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
     }
+}
 
+[System.Serializable]
+public class MyEvents
+{
+    [Tooltip("Time you would like the event to occur.")]
+    public float eventTimeStart;
 
-    public void EventOne()
-    {
+    [Tooltip("Array of events that will occur based on the time set above")]
+    [SerializeField] UnityEvent[] TimeElapsedEvents;
 
-    }
 }
 
 
