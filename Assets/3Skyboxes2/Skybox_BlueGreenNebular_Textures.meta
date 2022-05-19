@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/3Skyboxes2/Skybox_BlueGreenNebular_Textures.meta
 guid: dfbb4199b9ce7ac4388c5a831608199a
+=======
+guid: 7f0a21d5a1fc2244391d1dae6b5badd0
+>>>>>>> master:Assets/Models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
