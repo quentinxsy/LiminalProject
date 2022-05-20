@@ -53,7 +53,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpAmt: 60
+    - _ColorStrength: 1
+    - _CoreStrength: 1
     - _CutOut: 0.3
+    - _CutOutLightCore: 0.5
     - _Cutoff: 1
     - _Displacement: 0.3
     - _EdgeLength: 3
@@ -71,8 +74,11 @@ Material:
     - _Scale: 0.3928571
     - _Shininess: 3.0000007
     - _Tess: 4
+    - _TintStrength: 1
     m_Colors:
     - _Color: {r: 0.8308824, g: 0.8864135, b: 1, a: 1}
+    - _CoreColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _ReflectColor: {r: 0.6102941, g: 0.70973617, b: 1, a: 1}
     - _RimColor: {r: 0.87018263, g: 0.85294116, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
