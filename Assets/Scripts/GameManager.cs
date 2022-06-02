@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        Debug.Log(elapsedTime);
+        //Debug.Log(elapsedTime);
 
         if(elapsedTime > 0 && elapsedTime < 60)
         {
@@ -66,15 +66,17 @@ public class GameManager : MonoBehaviour
         switch (currentGamePhase)
         {
             case GamePhases.Start:
-                RenderSettings.skybox = skyboxMaterials[0];               
+                //RenderSettings.skybox = skyboxMaterials[0];     
+                //RenderSettings.skybox.color = Color.red;
+                //DynamicGI.UpdateEnvironment();
                 break;
                         
             case GamePhases.Middle:
-                RenderSettings.skybox = skyboxMaterials[1];
+                //.skybox = skyboxMaterials[1];
                 break;
 
             case GamePhases.End:
-                RenderSettings.skybox = skyboxMaterials[2];
+                //RenderSettings.skybox = skyboxMaterials[2];
                 break;
         }
     }
@@ -95,6 +97,13 @@ public class GameManager : MonoBehaviour
     {
         eventManager[3].TimeElapsedEvents.Invoke();
     }
+
+    public void TestLerpSkybox()
+    {
+        RenderSettings.skybox.Lerp(skyboxMaterials[0], skyboxMaterials[1], 5);
+        RenderSettings.skybox = skyboxMaterials[1];
+        Debug.Log("LerpSKybox");
+    }
 }
 
 [System.Serializable]
@@ -107,5 +116,7 @@ public class EventManager
     public UnityEvent TimeElapsedEvents;
 
 }
+
+
 
 
