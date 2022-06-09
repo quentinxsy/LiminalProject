@@ -63,9 +63,9 @@ Material:
     - _Shininess: 1
     - _TintStrength: 1
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.38195392, g: 0.08610717, b: 0.4056604, a: 1}
     - _CoreColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
-    - _ReflectColor: {r: 0.6764706, g: 0.78580123, b: 1, a: 1}
+    - _ReflectColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
