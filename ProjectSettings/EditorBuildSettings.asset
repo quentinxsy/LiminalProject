@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Examples/Scenes/Week09/EndingTest.unity
+  - enabled: 0
+    path: Assets/Scenes/EndingTest.unity
     guid: a17bce836085b9441bc5f71590487f7d
   - enabled: 0
     path: Assets/Examples/Scenes/Example.unity
     guid: 17d10320f148ee64488837d5f8008cfd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/KevinMain.unity
     guid: f4cc6e807f0337c4e83e48d215617e41
   m_configObjects: {}
