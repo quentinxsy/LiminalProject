@@ -45,20 +45,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        //Debug.Log(elapsedTime);
+        Debug.Log(elapsedTime);
 
-        if(elapsedTime > 0 && elapsedTime < 60)
+        if(elapsedTime > 0 && elapsedTime < 15)
         {
             currentGamePhase = GamePhases.Start;
             
         }
 
-        if (elapsedTime > 60 && elapsedTime < 180)
+        if (elapsedTime > 15 && elapsedTime < 45)
         {
             currentGamePhase = GamePhases.Middle;
         }
             
-        if (elapsedTime > 180 && elapsedTime < 240)
+        if (elapsedTime > 45 && elapsedTime < 75)
         {
             currentGamePhase = GamePhases.End;
         }
@@ -66,17 +66,15 @@ public class GameManager : MonoBehaviour
         switch (currentGamePhase)
         {
             case GamePhases.Start:
-                //RenderSettings.skybox = skyboxMaterials[0];     
-                //RenderSettings.skybox.color = Color.red;
-                //DynamicGI.UpdateEnvironment();
+                RenderSettings.skybox = skyboxMaterials[0];     
                 break;
                         
             case GamePhases.Middle:
-                //.skybox = skyboxMaterials[1];
+                RenderSettings.skybox = skyboxMaterials[1];
                 break;
 
             case GamePhases.End:
-                //RenderSettings.skybox = skyboxMaterials[2];
+                RenderSettings.skybox = skyboxMaterials[2];
                 break;
         }
     }

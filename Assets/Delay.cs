@@ -25,13 +25,18 @@ public class Delay : MonoBehaviour
 
     IEnumerator spawn()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(47f);
         blackhole.SetActive(true);
         lightTrial.SetActive(true);
         core = GetComponent<ParticleSystem>();
         var corespeed = core.main;
         corespeed.simulationSpeed = 0;
 
+
+    }
+
+    public void SpawnExplosion()
+    {
 
     }
 }
