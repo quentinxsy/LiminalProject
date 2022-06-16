@@ -12,11 +12,9 @@ public class GameManager : MonoBehaviour
     public GamePhases currentGamePhase;
     float elapsedTime;
 
-    public GameObject wormHole;
-    public bool spawnedWormHole = false;
-
-    
     public EventManager[] eventManager;
+
+    public Material[] skyboxMaterials;
 
 
     private void Start()
@@ -30,10 +28,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        foreach (EventManager @event in eventManager)
+        /*foreach (EventManager @event in eventManager)
         {
+            @event.TimeElapsedEvents.Invoke();
+        }*/
 
-        }
+        Invoke("FirstEvent", eventManager[0].eventTimeStart);
+        Invoke("SecondEvent", eventManager[1].eventTimeStart);
+        Invoke("ThirdEvent", eventManager[2].eventTimeStart);
+        Invoke("FourthEvent", eventManager[3].eventTimeStart);
 
     }
 
@@ -41,51 +44,63 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        
         elapsedTime += Time.deltaTime;
         Debug.Log(elapsedTime);
 
-        if(elapsedTime > 0 && elapsedTime < 60)
+        if(elapsedTime > 0 && elapsedTime < 15)
         {
             currentGamePhase = GamePhases.Start;
-            if(elapsedTime >= 5f && elapsedTime <= 6f && spawnedWormHole == false)
-            {
-                Instantiate(wormHole);
-                spawnedWormHole = true;
-                Debug.Log("Spawn Wormhole");
-            }
+            
         }
 
-        if (elapsedTime > 60 && elapsedTime < 180)
+        if (elapsedTime > 15 && elapsedTime < 45)
         {
-            currentGamePhase = GamePhases.Middle;            
+            currentGamePhase = GamePhases.Middle;
         }
             
-        if (elapsedTime > 180 && elapsedTime < 240)
+        if (elapsedTime > 45 && elapsedTime < 75)
         {
-            currentGamePhase = GamePhases.End;            
+            currentGamePhase = GamePhases.End;
         }
 
         switch (currentGamePhase)
         {
             case GamePhases.Start:
+                RenderSettings.skybox = skyboxMaterials[0];     
                 break;
                         
             case GamePhases.Middle:
+                RenderSettings.skybox = skyboxMaterials[1];
                 break;
 
             case GamePhases.End:
+                RenderSettings.skybox = skyboxMaterials[2];
                 break;
         }
-
-
     }
 
-    IEnumerator Event1()
+    public void FirstEvent()
     {
-        yield return new WaitForSeconds(15f);
+        eventManager[0].TimeElapsedEvents.Invoke();
+    }
+    public void SecondEvent()
+    {
+        eventManager[1].TimeElapsedEvents.Invoke();
+    }
+    public void ThirdEvent()
+    {
+        eventManager[2].TimeElapsedEvents.Invoke();
+    }
+    public void FourthEvent()
+    {
+        eventManager[3].TimeElapsedEvents.Invoke();
+    }
+
+    public void TestLerpSkybox()
+    {
+        RenderSettings.skybox.Lerp(skyboxMaterials[0], skyboxMaterials[1], 5);
+        RenderSettings.skybox = skyboxMaterials[1];
+        Debug.Log("LerpSKybox");
     }
 }
 
@@ -96,8 +111,10 @@ public class EventManager
     public float eventTimeStart;
 
     [Tooltip("Array of events that will occur based on the time set above")]
-    [SerializeField] UnityEvent[] TimeElapsedEvents;
+    public UnityEvent TimeElapsedEvents;
 
 }
+
+
 
 
