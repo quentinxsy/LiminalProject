@@ -21,7 +21,7 @@ public class test : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         this.GetComponent<Spin>().enabled = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         this.GetComponent<Spin>().enabled = false;
 
     }
