@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class test : MonoBehaviour
 {
@@ -24,5 +25,12 @@ public class test : MonoBehaviour
         yield return new WaitForSeconds(16f);
         this.GetComponent<Spin>().enabled = false;
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "blackhole")
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

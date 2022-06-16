@@ -7,7 +7,7 @@ public class Delay : MonoBehaviour
 {
     public GameObject blackhole;
     public GameObject lightTrial;
-    public ParticleSystem core;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -25,12 +25,11 @@ public class Delay : MonoBehaviour
 
     IEnumerator spawn()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
         blackhole.SetActive(true);
+        yield return new WaitForSeconds(3f);
         lightTrial.SetActive(true);
-        core = GetComponent<ParticleSystem>();
-        var corespeed = core.main;
-        corespeed.simulationSpeed = 0;
+        
 
 
     }
