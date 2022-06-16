@@ -20,9 +20,9 @@ public class test : MonoBehaviour
     }
     IEnumerator move()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(50f);
         this.GetComponent<Spin>().enabled = true;
-        yield return new WaitForSeconds(16f);
+        yield return new WaitForSeconds(56f);
         this.GetComponent<Spin>().enabled = false;
 
     }
@@ -30,7 +30,7 @@ public class test : MonoBehaviour
     {
         if(other.gameObject.tag == "blackhole")
         {
-            SceneManager.LoadScene("Menu");
+            //SceneManager.LoadScene("Menu");
         }
     }
 }

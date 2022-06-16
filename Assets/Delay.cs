@@ -7,8 +7,8 @@ public class Delay : MonoBehaviour
 {
     public GameObject blackhole;
     public GameObject lightTrial;
-    
-    
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +25,17 @@ public class Delay : MonoBehaviour
 
     IEnumerator spawn()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(40.5f);
         blackhole.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(43f);
         lightTrial.SetActive(true);
         
 
 
+    }
+    IEnumerator bspawn()
+    {
+        yield return new WaitForSeconds(40f);
+       explosion .SetActive(true);
     }
 }

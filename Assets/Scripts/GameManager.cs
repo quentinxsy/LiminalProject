@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         Invoke("SecondEvent", eventManager[1].eventTimeStart);
         Invoke("ThirdEvent", eventManager[2].eventTimeStart);
         Invoke("FourthEvent", eventManager[3].eventTimeStart);
+        Invoke("FifthEvent", eventManager[4].eventTimeStart);
 
     }
 
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GamePhases.End:
-                RenderSettings.skybox = skyboxMaterials[2];
+                //RenderSettings.skybox = skyboxMaterials[2];
                 break;
         }
     }
@@ -94,6 +95,10 @@ public class GameManager : MonoBehaviour
     public void FourthEvent()
     {
         eventManager[3].TimeElapsedEvents.Invoke();
+    }
+    public void FifthEvent()
+    {
+        eventManager[4].TimeElapsedEvents.Invoke();
     }
 
     public void TestLerpSkybox()

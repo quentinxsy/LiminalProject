@@ -11,6 +11,8 @@ public class Spin : MonoBehaviour
     [SerializeField] private float moveX;
     [SerializeField] private float moveY;
     [SerializeField] private float moveZ;
+
+    public GameObject panel;
         
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,18 @@ public class Spin : MonoBehaviour
         float MY = moveY * Time.deltaTime;
         float MZ = moveZ * Time.deltaTime;
         transform.Translate(MX, MZ, MY);
+
+
+        
     }
-
-
-    public void activate()
+    private void OnTriggerEnter(Collider other)
     {
-
+        if(other.gameObject.tag == "blackhole")
+        {
+            panel.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
+
+
 }

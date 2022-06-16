@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
     }
     public void restart()
     {
-        SceneManager.LoadScene("EndingTest");
+       // SceneManager.LoadScene("EndingTest");
     }
     public void quit()
     {

@@ -8,7 +8,6 @@ public class SceneManager : MonoBehaviour
     public GameObject rings;
     public GameObject cluster;
     public GameObject A;
-    public GameObject B;
     public GameObject C;
     public GameObject D;
     // Start is called before the first frame update
@@ -23,7 +22,6 @@ public class SceneManager : MonoBehaviour
     public void TurnOff()
     {
         A.SetActive(false);
-        B.SetActive(false);
         C.SetActive(false);
         D.SetActive(false);
         cluster.SetActive(false);
